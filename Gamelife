@@ -12,9 +12,11 @@ def seleccion_celulas():
     off()
 
 def on():
+  ENCENDER CELULA
   #Aquí se enciende la casilla seleccionada por el usuario
 
 def off():
+  APAGAR CELULA
   #Aquí se apaga la casilla seleccionada por el usuario
 
 def detector_fin_de_juego(rejilla):
@@ -25,6 +27,12 @@ def detector_fin_de_juego(rejilla):
    else:
     return "SURVIVING"
 
+def nacimiento(celula):
+  ENCENDER CELULA
+
+def muerte(celula):
+  APAGAR CELULA
+  
 def main():
   rejilla = CUADRICULA DE 25x25
   creacion_rejilla(rejilla)
@@ -37,5 +45,10 @@ def main():
       break
   detector = detector_fin_de_juego(rejilla)
   while detector == "SURVIVING":
-  
-  main()
+    PREMISAS:
+    if celula==3*(celulas vecinas vivas):
+      nacimiento(celula)
+    if celula == (<2celulas vecinas vivas) or (>3celulas vecinas vivas):
+      muerte(celula)
+    detector = detector_fin_de_juego(rejilla)
+ main()
