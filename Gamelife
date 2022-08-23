@@ -1,24 +1,20 @@
 #Juego de la vida Mikebarsa 23/08/22
-
 def creacion_rejilla(rejjilla):
   #Aquí habrá una función gráfica para crear la rejilla
-  
 def seleccion_celulas():
   numero_de_clicks = int(input(clicks))
   #Aquí el usuario da los clicks necesarios y el número de clicks se guarda en numero_de_clicks
   if (numero_de_clicks%2)==0:
+    #si da en total
     on()
   if (numero_de_clicks%2)!=0:
     off()
-
 def on():
   ENCENDER CELULA
   #Aquí se enciende la casilla seleccionada por el usuario
-
 def off():
   APAGAR CELULA
   #Aquí se apaga la casilla seleccionada por el usuario
-
 def detector_fin_de_juego(rejilla):
   if rejilla == TODAS LAS CÉLULAS QUIETAS:
     return "UTOPIA"
@@ -26,13 +22,12 @@ def detector_fin_de_juego(rejilla):
     return "EXTINCTION"
    else:
     return "SURVIVING"
-
 def nacimiento(celula):
-  ENCENDER CELULA
-
+  #ENCENDER CELULA
 def muerte(celula):
-  APAGAR CELULA
-  
+  #APAGAR CELULA
+def supervivencia():
+  #MANTENER CELULA IGUAL
 def main():
   rejilla = CUADRICULA DE 25x25
   creacion_rejilla(rejilla)
@@ -47,7 +42,10 @@ def main():
   while detector == "SURVIVING":
     PREMISAS:
     if celula==3*(celulas vecinas vivas):
-      nacimiento(celula)
+      if celula == celula_viva and (>=2celulas vecinas vivas)
+        supervivencia(celula)
+      else:
+        nacimiento(celula)
     if celula == (<2celulas vecinas vivas) or (>3celulas vecinas vivas):
       muerte(celula)
     detector = detector_fin_de_juego(rejilla)
