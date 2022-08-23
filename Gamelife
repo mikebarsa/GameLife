@@ -1,0 +1,41 @@
+#Juego de la vida Mikebarsa 23/08/22
+
+def creacion_rejilla(rejjilla):
+  #Aquí habrá una función gráfica para crear la rejilla
+  
+def seleccion_celulas():
+  numero_de_clicks = int(input(clicks))
+  #Aquí el usuario da los clicks necesarios y el número de clicks se guarda en numero_de_clicks
+  if (numero_de_clicks%2)==0:
+    on()
+  if (numero_de_clicks%2)!=0:
+    off()
+
+def on():
+  #Aquí se enciende la casilla seleccionada por el usuario
+
+def off():
+  #Aquí se apaga la casilla seleccionada por el usuario
+
+def detector_fin_de_juego(rejilla):
+  if rejilla == TODAS LAS CÉLULAS QUIETAS:
+    return "UTOPIA"
+  if rejilla == TODAS LAS CÉLULAS MUERTAS:
+    return "EXTINCTION"
+   else:
+    return "SURVIVING"
+
+def main():
+  rejilla = CUADRICULA DE 25x25
+  creacion_rejilla(rejilla)
+  print ("Selecciona las células que quieras que vivan y presione enter cuando haya acabado")
+  Enter = bool(input(Enter))
+  while Enter == False:
+    Enter = bool(input(Enter))
+    seleccion_celulas()
+    if Enter == True:
+      break
+  detector = detector_fin_de_juego(rejilla)
+  while detector == "SURVIVING":
+  
+  main()
