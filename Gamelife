@@ -1,52 +1,77 @@
 #Juego de la vida Mikebarsa 23/08/22
-def creacion_rejilla(rejjilla):
-  #Aquí habrá una función gráfica para crear la rejilla
-def seleccion_celulas():
-  numero_de_clicks = int(input(clicks))
-  #Aquí el usuario da los clicks necesarios y el número de clicks se guarda en numero_de_clicks
-  if (numero_de_clicks%2)==0:
-    #si da en total
-    on()
-  if (numero_de_clicks%2)!=0:
-    off()
-def on():
-  ENCENDER CELULA
-  #Aquí se enciende la casilla seleccionada por el usuario
-def off():
-  APAGAR CELULA
-  #Aquí se apaga la casilla seleccionada por el usuario
-def detector_fin_de_juego(rejilla):
-  if rejilla == TODAS LAS CÉLULAS QUIETAS:
-    return "UTOPIA"
-  if rejilla == TODAS LAS CÉLULAS MUERTAS:
-    return "EXTINCTION"
-   else:
-    return "SURVIVING"
-def nacimiento(celula):
-  #ENCENDER CELULA
-def muerte(celula):
-  #APAGAR CELULA
-def supervivencia():
-  #MANTENER CELULA IGUAL
+"""/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"""
+#PREMISAS JUEGO DE LA VIDA (AVANCE 1)
 def main():
-  rejilla = CUADRICULA DE 25x25
-  creacion_rejilla(rejilla)
-  print ("Selecciona las células que quieras que vivan y presione enter cuando haya acabado")
-  Enter = bool(input(Enter))
-  while Enter == False:
+    print ("¿La celula está viva o muerta?")
+    celula = str(input("viva/muerta: "))
+    if celula == "muerta":
+        print ("¿Cuántas células vecinas vivas tiene?")
+        cel_vecinas_vivas = int(input("Introduce número: "))
+        if cel_vecinas_vivas==3:
+            #Nacimiento: si una célula muerta está rodeada por exactamente 3 células vecinas vivas, esta nacerá
+            print ("Tu célula acaba de nacer")
+        else:
+            print ("Tu célula sigue muerta")
+    elif celula == "viva":
+        print ("¿Cuántas células vecinas vivas tiene?")
+        cel_vecinas_vivas = int(input("Introduce número: "))
+        if cel_vecinas_vivas>=2 and cel_vecinas_vivas<=3:
+            #Supervivencia: si una célula tiene 2 o 3 células vecinas vivas, esta sobrevive
+            print ("Tu célula sobrevivió")
+        else:
+            #Muerte: si una célula tiene menos de 2 o más de 3 células vecinas vivas, esta muere
+            print ("Tu célula murió")
+main()
+"""/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"""
+
+def creacion_rejilla(rejjilla):
+    #Aquí habrá una función gráfica para crear la rejilla
+def seleccion_celulas():
+    numero_de_clicks = int(input(clicks))
+    #Aquí el usuario da los clicks necesarios y el número de clicks se guarda en numero_de_clicks
+    if (numero_de_clicks%2)==0:
+      #si da en total
+      on()
+    if (numero_de_clicks%2)!=0:
+      off()
+def on():
+    ENCENDER CELULA
+    #Aquí se enciende la casilla seleccionada por el usuario
+def off():
+    APAGAR CELULA
+    #Aquí se apaga la casilla seleccionada por el usuario
+def detector_fin_de_juego(rejilla):
+    if rejilla == TODAS LAS CÉLULAS QUIETAS:
+      return "UTOPIA"
+    if rejilla == TODAS LAS CÉLULAS MUERTAS:
+      return "EXTINCTION"
+     else:
+      return "SURVIVING"
+def nacimiento(celula):
+    #ENCENDER CELULA
+def muerte(celula):
+    #APAGAR CELULA
+def supervivencia():
+    #MANTENER CELULA IGUAL
+def main_secundario():
+    rejilla = CUADRICULA DE 25x25
+    creacion_rejilla(rejilla)
+    print ("Selecciona las células que quieras que vivan y presione enter cuando haya acabado")
     Enter = bool(input(Enter))
-    seleccion_celulas()
-    if Enter == True:
-      break
-  detector = detector_fin_de_juego(rejilla)
-  while detector == "SURVIVING":
-    PREMISAS:
-    if celula==3*(celulas vecinas vivas):
-      if celula == celula_viva and (>=2celulas vecinas vivas)
-        supervivencia(celula)
-      else:
-        nacimiento(celula)
-    if celula == (<2celulas vecinas vivas) or (>3celulas vecinas vivas):
-      muerte(celula)
+    while Enter == False:
+      Enter = bool(input(Enter))
+      seleccion_celulas()
+      if Enter == True:
+        break
     detector = detector_fin_de_juego(rejilla)
- main()
+    while detector == "SURVIVING":
+      PREMISAS:
+      if celula==3*(celulas vecinas vivas):
+        if celula == celula_viva and (>=2celulas vecinas vivas)
+          supervivencia(celula)
+        else:
+          nacimiento(celula)
+      if celula == (<2celulas vecinas vivas) or (>3celulas vecinas vivas):
+        muerte(celula)
+      detector = detector_fin_de_juego(rejilla)
+ "main_secundario()"
