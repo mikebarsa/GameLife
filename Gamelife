@@ -1,7 +1,24 @@
 #Juego de la vida Mikebarsa 23/08/22
-"""/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"""
-#PREMISAS JUEGO DE LA VIDA (AVANCE 1)
-def main():
+def rejilla():
+    rejilla = []
+    L = int(input("Inserta largo: "))
+    A = int(input("Inserta ancho: ")) 
+    rejilla.insert(0, L)
+    rejilla.insert(1, A)
+    cel_totales = (rejilla[0]*rejilla[1])
+    print ("Tu ancho es de: ", rejilla[0])
+    print ("Tu largo es de: ", rejilla[1])
+    print ("Hay ", cel_totales, " células totales")
+    return rejilla
+def creacion_rejilla(rejilla):
+    print("\n#FUNCIÓN CREA REJILLA\n")
+def seleccion_celulas(rejilla):
+    print("\n#FUNCIÓN QUE HACE QUE LOS CLICKS ENCIENDAN CÉLULAS Y LOS DOBLES LAS APAGUEN\n")
+def monitoreador_de_celulas(rejilla):
+    print("\n#FUNCIÓN QUE MONITOREA Y CHECA CÉLULA POR CÉLULA\n")
+    evaluador(rejilla)
+def evaluador(rejilla):
+    print ("\n#LA FUNCIÓN EVALUADOR EVALUA LO SIGUIENTE DE CADA CÉLULA: \n")
     print ("¿La celula está viva o muerta?")
     celula = str(input("viva/muerta: "))
     if celula == "muerta":
@@ -21,57 +38,12 @@ def main():
         else:
             #Muerte: si una célula tiene menos de 2 o más de 3 células vecinas vivas, esta muere
             print ("Tu célula murió")
-main()
-"""/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"""
-
-def creacion_rejilla(rejjilla):
-    #Aquí habrá una función gráfica para crear la rejilla
-def seleccion_celulas():
-    numero_de_clicks = int(input(clicks))
-    #Aquí el usuario da los clicks necesarios y el número de clicks se guarda en numero_de_clicks
-    if (numero_de_clicks%2)==0:
-      #si da en total
-      on()
-    if (numero_de_clicks%2)!=0:
-      off()
-def on():
-    ENCENDER CELULA
-    #Aquí se enciende la casilla seleccionada por el usuario
-def off():
-    APAGAR CELULA
-    #Aquí se apaga la casilla seleccionada por el usuario
-def detector_fin_de_juego(rejilla):
-    if rejilla == TODAS LAS CÉLULAS QUIETAS:
-      return "UTOPIA"
-    if rejilla == TODAS LAS CÉLULAS MUERTAS:
-      return "EXTINCTION"
-     else:
-      return "SURVIVING"
-def nacimiento(celula):
-    #ENCENDER CELULA
-def muerte(celula):
-    #APAGAR CELULA
-def supervivencia():
-    #MANTENER CELULA IGUAL
-def main_secundario():
-    rejilla = CUADRICULA DE 25x25
+    estado_del_juego()
+def estado_del_juego():
+    print ("#\nEN ESTE CASO SI NO HAY 'MOVIMIENTO', IMPRIME EN PANTALLA LAS CÉLULAS UTOPÍA O EXTINCIÓN")
+def main():
+    rejilla()
     creacion_rejilla(rejilla)
-    print ("Selecciona las células que quieras que vivan y presione enter cuando haya acabado")
-    Enter = bool(input(Enter))
-    while Enter == False:
-      Enter = bool(input(Enter))
-      seleccion_celulas()
-      if Enter == True:
-        break
-    detector = detector_fin_de_juego(rejilla)
-    while detector == "SURVIVING":
-      PREMISAS:
-      if celula==3*(celulas vecinas vivas):
-        if celula == celula_viva and (>=2celulas vecinas vivas)
-          supervivencia(celula)
-        else:
-          nacimiento(celula)
-      if celula == (<2celulas vecinas vivas) or (>3celulas vecinas vivas):
-        muerte(celula)
-      detector = detector_fin_de_juego(rejilla)
- "main_secundario()"
+    seleccion_celulas(rejilla)
+    monitoreador_de_celulas(rejilla)
+main()
